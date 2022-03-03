@@ -31,23 +31,15 @@ namespace CS_DZ_Collection_4
                 switch (userInput)
                 {
                     case "1":
-                        Console.WriteLine("Введите ФИО и должность: ");
-                        nameAndPosition.Add(Console.ReadLine(), Console.ReadLine());
-                        Console.Clear();
+                        CreateDossier(ref nameAndPosition);
                         break;
 
                     case "2":
-                        Console.Clear();
-                        foreach (var item in nameAndPosition)
-                        {
-                            Console.Write("\nФИО - " + item.Key + " должность - " + item.Value + "\n");
-                        }
+                        ShowDossier(ref nameAndPosition);
                         break;
 
                     case "3":
-                        Console.WriteLine("Введите ФИО для удаления досье: ");
-                        nameAndPosition.Remove(Console.ReadLine());
-                        Console.Clear();
+                        DeleteDossier(ref nameAndPosition);
                         break;
 
                     case "4":
@@ -57,6 +49,29 @@ namespace CS_DZ_Collection_4
                         break;
                 }
             }
+        }
+
+        static void CreateDossier(ref Dictionary<string, string> dossier)
+        {
+            Console.WriteLine("Введите ФИО и должность: ");
+            dossier.Add(Console.ReadLine(), Console.ReadLine());
+            Console.Clear();
+        }
+
+        static void ShowDossier(ref Dictionary<string,string> dossier)
+        {
+            Console.Clear();
+            foreach (var item in dossier)
+            {
+                Console.Write("\nФИО - " + item.Key + " должность - " + item.Value + "\n");
+            }
+        }
+
+        static void DeleteDossier(ref Dictionary<string, string> dossier)
+        {
+            Console.WriteLine("Введите ФИО для удаления досье: ");
+            dossier.Remove(Console.ReadLine());
+            Console.Clear();
         }
     }
 }
