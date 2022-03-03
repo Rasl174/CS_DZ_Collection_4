@@ -24,7 +24,7 @@ namespace CS_DZ_Collection_4
                 Console.WriteLine("Для добавления досье введите 1");
                 Console.WriteLine("Для вывода всех досье введите 2");
                 Console.WriteLine("Для удаления досье введите 3");
-                Console.WriteLine("Для выхода досье введите 4 или exit");
+                Console.WriteLine("Для выхода введите 4 или exit");
 
                 userInput = Console.ReadLine();
 
